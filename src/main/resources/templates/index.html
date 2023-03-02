@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Pizza Cart</title>
+</head>
+
+<body>
+    <div class="d-flex flex-column p-3">
+        <h1>Panucci's Pizza</h1>
+        <h3>Select a Pizza</h3>
+        <form action="/pizza" method="POST" data-th-object="${pizza}">
+            <div>
+                <label for="bella">Bella</label>
+                <input type="radio" value="bella" id="bella" field="*{pizza}" name="pizza">
+
+                <label for="margherita">Margherita</label>
+                <input type="radio" value="margherita" id="margherita" field="*{pizza}" name="pizza">
+
+                <label for="marinara">Marinara</label>
+                <input type="radio" value="marinara" id="marinara" field="*{pizza}" name="pizza">
+
+                <label for="spinata">Spinata Calabrese</label>
+                <input type="radio" value="spianatacalabrese" id="spinata" field="*{pizza}" name="pizza">
+
+                <label for="formaggio">Trio Formaggio</label>
+                <input type="radio" value="trioformaggio" id="formaggio" field="*{pizza}" name="pizza">
+                <!-- <table>
+                    <tr data-th-if="${#fields.hasErrors('pizza')}">
+                        <td data-th-errors="*{pizza}" data-th-errorclass="error"></td>
+                    </tr>
+                </table> -->
+            </div>
+            <div>
+                <label for="size">Size: </label>
+                <select name="size" id="size" required>
+                    <option value="sm">Small</option>
+                    <option value="md">Medium</option>
+                    <option value="lg">Large</option>
+                </select>
+            </div>
+            <label for="quantity">Quantity: </label>
+            <input type="number" name="quantity" required>
+            <button type="submit">Next</button>
+        </form>
+    </div>
+</body>
+
+</html>
